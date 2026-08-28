@@ -52,15 +52,6 @@ header.hero::before {
   pointer-events: none;
 }
 
-.eyebrow {
-  font-family: 'Courier Prime', monospace;
-  letter-spacing: 0.35em;
-  font-size: 0.75rem;
-  color: var(--brass-bright);
-  text-transform: uppercase;
-  margin-bottom: 1.25rem;
-}
-
 h1.title {
   font-size: clamp(2.6rem, 7vw, 5rem);
   font-weight: 700;
@@ -79,31 +70,6 @@ h1.title span {
   margin-top: 1rem;
   text-transform: uppercase;
 }
-
-.hero-sub {
-  max-width: 640px;
-  margin: 2rem auto 0;
-  color: rgba(237,231,214,0.75);
-  font-size: 1.05rem;
-  font-weight: 300;
-}
-
-/* ---------- Slate / intro strip ---------- */
-
-.slate {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0 2.5rem;
-  margin-top: 2.5rem;
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.75rem;
-  color: rgba(237,231,214,0.55);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.slate span b { color: var(--brass-bright); font-weight: 700; }
 
 /* ---------- Grid ---------- */
 
@@ -135,7 +101,7 @@ main {
 .frame {
   position: relative;
   background: var(--navy-2);
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 4 / 5;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -146,7 +112,7 @@ main {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 20%;
+  object-position: center 18%;
   filter: grayscale(35%) contrast(1.05);
   display: block;
 }
@@ -256,22 +222,12 @@ footer .credit {
   color: rgba(237,231,214,0.28);
 }
 
-@media (max-width: 480px) {
-  .slate { gap: 0.5rem 1.5rem; }
-}
 </style>
 </head>
 <body>
 
 <header class="hero">
-  <div class="eyebrow">Casting Call &mdash; Supporting Cast</div>
   <h1 class="title">Also Starring<span>The 1990s character actor hall of fame</span></h1>
-  <p class="hero-sub">They never opened a movie. They just made every one of them better. Nineteen faces you'd know anywhere and names you'd never quite catch &mdash; until now.</p>
-  <div class="slate">
-    <span><b>19</b> actors</span>
-    <span><b>90s</b> era</span>
-    <span><b>0</b> leading roles required</span>
-  </div>
 </header>
 
 <main>
@@ -330,7 +286,7 @@ const actors = [
     name: "Bruce McGill",
     specialty: "The gruff authority figure with a code",
     stamp: "Reliable",
-    photo: "Bruce_McGill.jpg",
+    photo: "Bruce_Mcgill_in_2017.jpg",
     credits: [
       ["My Cousin Vinny", "1992", "Sheriff Farley"],
       ["The Sum of All Fears", "2002", "Attorney General"],
@@ -407,7 +363,7 @@ const actors = [
     name: "Ving Rhames",
     specialty: "Sheer physical presence, magnetic",
     stamp: "Featured",
-    photo: "Ving_Rhames_2010_(4710601891)_(cropped).jpg",
+    photo: "img/ving-rhames.jpg",
     credits: [
       ["Pulp Fiction", "1994", "Marsellus Wallace"],
       ["Mission: Impossible", "1996", "Luther Stickell"],
@@ -429,7 +385,7 @@ const actors = [
     name: "Miguel Ferrer",
     specialty: "Acid-tongued, always the smartest guy in the room",
     stamp: "Featured",
-    photo: "Miguel_Ferrer_at_the_NCIS_LA_Season_7_Premiere_as_part_of_Paleyfest_Previews_-_DSC_0404_(20743137643).jpg",
+    photo: "Miguel_Ferrer_2015.jpg",
     credits: [
       ["RoboCop", "1987", "Bob Morton"],
       ["Traffic", "2000", "Agent Castro"],
@@ -440,7 +396,7 @@ const actors = [
     name: "Fred Ward",
     specialty: "Gruff, dependable, never the star",
     stamp: "Reliable",
-    photo: "https://upload.wikimedia.org/wikipedia/en/a/ae/Fred_Ward.png",
+    photo: "img/fred-ward.jpg",
     credits: [
       ["Tremors", "1990", "Earl Bassett"],
       ["Short Cuts", "1993", "Stuart Kane"],
@@ -473,7 +429,7 @@ const actors = [
     name: "Stephen Tobolowsky",
     specialty: "The chatty guy you can't get away from",
     stamp: "Comic relief",
-    photo: "Stephen_Tobolowsky,_2013_(01).jpg",
+    photo: "Stephen_tobolowsky_2012.jpg",
     credits: [
       ["Groundhog Day", "1993", "Ned Ryerson"],
       ["Sneakers", "1992", "Dr. Werner Brandes"],
