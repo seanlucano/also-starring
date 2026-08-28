@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Also Starring — 90s Character Actors</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Courier+Prime:wght@400;700&display=swap');
+
+:root {
+  --paper: #EDE7D6;
+  --paper-dark: #DED5BC;
+  --ink: #201C16;
+  --ink-soft: #4A443B;
+  --navy: #171A22;
+  --navy-2: #20242F;
+  --brass: #B08D2B;
+  --brass-bright: #C9A227;
+  --stamp-red: #8B2E2E;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--navy);
+  color: var(--paper);
+  font-family: 'Oswald', sans-serif;
+  line-height: 1.5;
+}
+
+/* ---------- Hero ---------- */
+
+header.hero {
+  position: relative;
+  padding: 6rem 1.5rem 4rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(201,162,39,0.35);
+  overflow: hidden;
+}
+
+header.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 38px,
+    rgba(201,162,39,0.06) 38px,
+    rgba(201,162,39,0.06) 40px
+  );
+  pointer-events: none;
+}
+
+.eyebrow {
+  font-family: 'Courier Prime', monospace;
+  letter-spacing: 0.35em;
+  font-size: 0.75rem;
+  color: var(--brass-bright);
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+h1.title {
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--paper);
+  line-height: 0.98;
+}
+
+h1.title span {
+  display: block;
+  font-size: clamp(1rem, 2.4vw, 1.3rem);
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  color: var(--brass-bright);
+  margin-top: 1rem;
+  text-transform: uppercase;
+}
+
+.hero-sub {
+  max-width: 640px;
+  margin: 2rem auto 0;
+  color: rgba(237,231,214,0.75);
+  font-size: 1.05rem;
+  font-weight: 300;
+}
+
+/* ---------- Slate / intro strip ---------- */
+
+.slate {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0 2.5rem;
+  margin-top: 2.5rem;
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.75rem;
+  color: rgba(237,231,214,0.55);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.slate span b { color: var(--brass-bright); font-weight: 700; }
+
+/* ---------- Grid ---------- */
+
+main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.75rem;
+}
+
+.card {
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: 3px;
+  position: relative;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.35);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* portrait / monogram frame */
+
+.frame {
+  position: relative;
+  background: var(--navy-2);
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  filter: grayscale(35%) contrast(1.05);
+  display: block;
+}
+
+.sprockets {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 16px;
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--ink) 0,
+    var(--ink) 10px,
+    transparent 10px,
+    transparent 22px
+  );
+}
+.sprockets.left { left: 0; }
+.sprockets.right { right: 0; }
+
+.monogram {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 3.6rem;
+  color: rgba(237,231,214,0.9);
+  letter-spacing: 0.02em;
+}
+
+.stamp {
+  position: absolute;
+  top: 12px;
+  right: 28px;
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--stamp-red);
+  border: 1.5px solid var(--stamp-red);
+  padding: 3px 7px;
+  border-radius: 2px;
+  transform: rotate(-8deg);
+  text-transform: uppercase;
+  background: rgba(139,46,46,0.06);
+  white-space: nowrap;
+}
+
+.card-body {
+  padding: 1.1rem 1.3rem 1.4rem;
+  border-top: 3px solid var(--navy);
+}
+
+.name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  margin-bottom: 0.15rem;
+}
+
+.specialty {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  font-style: italic;
+  margin-bottom: 0.9rem;
+}
+
+.credits {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.76rem;
+  border-top: 1px dashed rgba(32,28,22,0.3);
+  padding-top: 0.7rem;
+}
+
+.credits li {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.18rem 0;
+  color: var(--ink-soft);
+}
+
+.credits li b {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.credits li .yr {
+  color: var(--brass);
+  flex-shrink: 0;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+  text-align: center;
+  padding: 3rem 1.5rem 4rem;
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.75rem;
+  color: rgba(237,231,214,0.4);
+  letter-spacing: 0.05em;
+}
+
+footer .credit {
+  display: block;
+  margin-top: 0.6rem;
+  font-size: 0.65rem;
+  color: rgba(237,231,214,0.28);
+}
+
+@media (max-width: 480px) {
+  .slate { gap: 0.5rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="eyebrow">Casting Call &mdash; Supporting Cast</div>
+  <h1 class="title">Also Starring<span>The 1990s character actor hall of fame</span></h1>
+  <p class="hero-sub">They never opened a movie. They just made every one of them better. Nineteen faces you'd know anywhere and names you'd never quite catch &mdash; until now.</p>
+  <div class="slate">
+    <span><b>19</b> actors</span>
+    <span><b>90s</b> era</span>
+    <span><b>0</b> leading roles required</span>
+  </div>
+</header>
+
+<main>
+  <div class="grid" id="grid"></div>
+</main>
+
+<footer>Every one of them stole a scene from someone with top billing.<span class="credit">Photos via Wikimedia Commons, various photographers, licensed CC BY / CC BY-SA. Six actors are shown with a monogram in place of a freely-licensed photo.</span></footer>
+
+<script>
+const actors = [
+  {
+    name: "J.T. Walsh",
+    specialty: "The smiling man you shouldn't trust",
+    stamp: "Billed 4th",
+    photo: null,
+    credits: [
+      ["A Few Good Men", "1992", "Lt. Col. Markinson"],
+      ["Sneakers", "1992", "Bernard Abbott"],
+      ["The Negotiator", "1998", "Cmdr. Adam Beck"]
+    ]
+  },
+  {
+    name: "M. Emmet Walsh",
+    specialty: "Grizzled, sweaty, always a little sleazy",
+    stamp: "Character",
+    photo: null,
+    credits: [
+      ["Blade Runner", "1982", "Bryant"],
+      ["My Best Friend's Wedding", "1997", "Walter"],
+      ["The Iron Giant", "1999", "Marv Loach (voice)"]
+    ]
+  },
+  {
+    name: "William H. Macy",
+    specialty: "The nervous man about to make a terrible decision",
+    stamp: "Featured",
+    photo: "William_H_Macy_at_TIFF_2025.jpg",
+    credits: [
+      ["Fargo", "1996", "Jerry Lundegaard"],
+      ["Boogie Nights", "1997", "Little Bill"],
+      ["Pleasantville", "1998", "George Parker"]
+    ]
+  },
+  {
+    name: "Steve Buscemi",
+    specialty: "Twitchy, motor-mouthed, doomed",
+    stamp: "Featured",
+    photo: "Steve_Buscemi_2009_portrait.jpg",
+    credits: [
+      ["Reservoir Dogs", "1992", "Mr. Pink"],
+      ["Fargo", "1996", "Carl Showalter"],
+      ["Con Air", "1997", "Garland Greene"]
+    ]
+  },
+  {
+    name: "Bruce McGill",
+    specialty: "The gruff authority figure with a code",
+    stamp: "Reliable",
+    photo: "Bruce_McGill.jpg",
+    credits: [
+      ["My Cousin Vinny", "1992", "Sheriff Farley"],
+      ["The Sum of All Fears", "2002", "Attorney General"],
+      ["The Insider", "1999", "Don Hewitt"]
+    ]
+  },
+  {
+    name: "Stanley Tucci",
+    specialty: "Sharp-suited, sharper-tongued",
+    stamp: "Rising",
+    photo: "StanleyTucciMay09.jpg",
+    credits: [
+      ["The Pelican Brief", "1993", "Khamel"],
+      ["Murder One", "1995", "Ted Hoffman"],
+      ["Big Night", "1996", "Secondo"]
+    ]
+  },
+  {
+    name: "Philip Baker Hall",
+    specialty: "Weathered authority, quietly terrifying",
+    stamp: "Featured",
+    photo: "Philip_Baker_Hall_at_the_2009_Tribeca_Film_Festival.jpg",
+    credits: [
+      ["Boogie Nights", "1997", "Floyd Gondolli"],
+      ["Hard Eight", "1996", "Sydney"],
+      ["The Truman Show", "1998", "Network Executive"]
+    ]
+  },
+  {
+    name: "Kathy Bates",
+    specialty: "Fierce, funny, occasionally unhinged",
+    stamp: "Oscar '90",
+    photo: "Kathy_Bates_by_Gage_Skidmore.jpg",
+    credits: [
+      ["Misery", "1990", "Annie Wilkes"],
+      ["Primary Colors", "1998", "Libby Holden"],
+      ["Titanic", "1997", "Molly Brown"]
+    ]
+  },
+  {
+    name: "Delroy Lindo",
+    specialty: "Commanding presence, quiet menace",
+    stamp: "Featured",
+    photo: "Delroy_Lindo_2025.png",
+    credits: [
+      ["Malcolm X", "1992", "West Indian Archie"],
+      ["Crooklyn", "1994", "Woody Carmichael"],
+      ["Get Shorty", "1995", "Bo Catlett"]
+    ]
+  },
+  {
+    name: "Viggo Mortensen",
+    specialty: "Intense, before anyone knew his name",
+    stamp: "Pre-fame",
+    photo: "Viggo_Mortensen_TIFF_2011.jpg",
+    credits: [
+      ["Carlito's Way", "1993", "Lalin"],
+      ["G.I. Jane", "1997", "Master Chief Urgayle"],
+      ["A Perfect Murder", "1998", "David Shaw"]
+    ]
+  },
+  {
+    name: "Giancarlo Esposito",
+    specialty: "Precise, coiled, never wasted a line",
+    stamp: "Featured",
+    photo: "Giancarlo_Esposito_by_Gage_Skidmore.jpg",
+    credits: [
+      ["Do the Right Thing", "1989", "Buggin' Out"],
+      ["Malcolm X", "1992", "Radio Announcer"],
+      ["Nowhere in Africa", "2001", "Owuor"]
+    ]
+  },
+  {
+    name: "Ving Rhames",
+    specialty: "Sheer physical presence, magnetic",
+    stamp: "Featured",
+    photo: "Ving_Rhames_2010_(4710601891)_(cropped).jpg",
+    credits: [
+      ["Pulp Fiction", "1994", "Marsellus Wallace"],
+      ["Mission: Impossible", "1996", "Luther Stickell"],
+      ["Con Air", "1997", "Nathan 'Diamond Dog' Jones"]
+    ]
+  },
+  {
+    name: "Bill Duke",
+    specialty: "Imposing, granite-jawed, all business",
+    stamp: "Character",
+    photo: "Bill_Duke.jpg",
+    credits: [
+      ["Predator", "1987", "Mac"],
+      ["National Lampoon's Loaded Weapon 1", "1993", "Sgt. Kate Hogan"],
+      ["Payback", "1999", "Detective Hicks"]
+    ]
+  },
+  {
+    name: "Miguel Ferrer",
+    specialty: "Acid-tongued, always the smartest guy in the room",
+    stamp: "Featured",
+    photo: "Miguel_Ferrer_at_the_NCIS_LA_Season_7_Premiere_as_part_of_Paleyfest_Previews_-_DSC_0404_(20743137643).jpg",
+    credits: [
+      ["RoboCop", "1987", "Bob Morton"],
+      ["Traffic", "2000", "Agent Castro"],
+      ["The Manchurian Candidate", "2004", "Dick Jones"]
+    ]
+  },
+  {
+    name: "Fred Ward",
+    specialty: "Gruff, dependable, never the star",
+    stamp: "Reliable",
+    photo: null,
+    credits: [
+      ["Tremors", "1990", "Earl Bassett"],
+      ["Short Cuts", "1993", "Stuart Kane"],
+      ["The Player", "1992", "Walter Stuckel"]
+    ]
+  },
+  {
+    name: "David Paymer",
+    specialty: "The anxious agent, the nervous manager",
+    stamp: "Featured",
+    photo: null,
+    credits: [
+      ["City Slickers", "1991", "Ira Shalowitz"],
+      ["Mr. Saturday Night", "1992", "Stan Yankelman"],
+      ["Get Shorty", "1995", "Leo Devoe"]
+    ]
+  },
+  {
+    name: "Bill Nunn",
+    specialty: "Big, warm, and quietly powerful",
+    stamp: "Spike Lee reg.",
+    photo: null,
+    credits: [
+      ["Do the Right Thing", "1989", "Radio Raheem"],
+      ["New Jack City", "1991", "Pookie"],
+      ["The Sixth Sense", "1999", "Coach Boyle"]
+    ]
+  },
+  {
+    name: "Stephen Tobolowsky",
+    specialty: "The chatty guy you can't get away from",
+    stamp: "Comic relief",
+    photo: "Stephen_Tobolowsky,_2013_(01).jpg",
+    credits: [
+      ["Groundhog Day", "1993", "Ned Ryerson"],
+      ["Sneakers", "1992", "Dr. Werner Brandes"],
+      ["Mississippi Burning", "1988", "Clayton Townley"]
+    ]
+  },
+  {
+    name: "Vondie Curtis-Hall",
+    specialty: "Sturdy, versatile, always believable",
+    stamp: "Character",
+    photo: null,
+    credits: [
+      ["Passion Fish", "1992", "Sugar LeDoux"],
+      ["Broken Arrow", "1996", "Pritchett"],
+      ["Die Hard: With a Vengeance", "1995", "Joe Lambert"]
+    ]
+  }
+];
+
+const grid = document.getElementById('grid');
+const COMMONS = 'https://commons.wikimedia.org/wiki/Special:FilePath/';
+
+actors.forEach(a => {
+  const initials = a.name.split(' ').filter(w => /[A-Za-z]/.test(w[0])).map(w => w[0]).join('').slice(0,3);
+
+  const card = document.createElement('div');
+  card.className = 'card';
+
+  const creditsHtml = a.credits.map(c =>
+    `<li><span><b>${c[0]}</b> &mdash; ${c[2]}</span><span class="yr">${c[1]}</span></li>`
+  ).join('');
+
+  const src = a.photo
+    ? (a.photo.includes('/') ? a.photo : COMMONS + encodeURIComponent(a.photo) + '?width=500')
+    : null;
+
+  const visual = src
+    ? `<img src="${src}" alt="${a.name}" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'monogram',textContent:'${initials}'}))">`
+    : `<div class="monogram">${initials}</div>`;
+
+  card.innerHTML = `
+    <div class="frame">
+      <div class="sprockets left"></div>
+      ${visual}
+      <div class="sprockets right"></div>
+      <div class="stamp">${a.stamp}</div>
+    </div>
+    <div class="card-body">
+      <div class="name">${a.name}</div>
+      <div class="specialty">${a.specialty}</div>
+      <ul class="credits">${creditsHtml}</ul>
+    </div>
+  `;
+  grid.appendChild(card);
+});
+</script>
+
+</body>
+</html>
